@@ -1,4 +1,4 @@
-package db;
+package com.lucas.db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
