@@ -5,6 +5,7 @@ import com.lucas.model.dao.SellerDao;
 import com.lucas.model.entities.Department;
 import com.lucas.model.entities.Seller;
 
+import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -29,6 +30,11 @@ public class Program {
         for (Seller obj : list1) {
             System.out.println("Objeto: " + obj);
         }
+
+        System.out.println("\nTEST 4: Seller Insert:");
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.00, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id = " + newSeller.getId());
         /*
         Boolean equalTest = list.get(0).getDepartment() == list.get(1).getDepartment();
         System.out.println("Initial Department identityHashCode: " + System.identityHashCode(department));
