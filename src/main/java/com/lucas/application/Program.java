@@ -7,9 +7,12 @@ import com.lucas.model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
 
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
@@ -36,11 +39,18 @@ public class Program {
         sellerDao.insert(newSeller);
         System.out.println("Inserted! New id = " + newSeller.getId());
 
-        System.out.println("\nTEST 4: Seller Update:");
+        System.out.println("\nTEST 5: Seller Update:");
         seller = sellerDao.findById(1);
         seller.setName("Matha Wayne");
         sellerDao.update(seller);
         System.out.println("Update Completed");
+
+        System.out.println("\nTEST 6: Seller Delet:");
+        System.out.print(" Enter id for delete test: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete Complete!");
+
         /*
         Boolean equalTest = list.get(0).getDepartment() == list.get(1).getDepartment();
         System.out.println("Initial Department identityHashCode: " + System.identityHashCode(department));
